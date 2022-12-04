@@ -1,0 +1,64 @@
+[
+    {
+      "title": "特性介绍",
+      "icon": "mdi-satellite-variant",
+      "items": [
+        "List Item"
+        // { "divider": true },
+        // { "heading": "professional-support" },
+      ]
+    },
+    {
+      "title": "开始遥感提取",
+      "icon": "mdi-map-marker-multiple-outline",
+      "items": [
+        "1 - 土地利用分类",
+        "2 - 土地利用分类（GEP）",
+        "3 - 城市绿地提取",
+        "4 - 城市道路提取",
+        "5 - 城市水体提取",
+        "6 - 农业地块提取"
+      ],
+      "active": true
+    },
+    {
+      "title": "Education",
+      "icon": "mdi-school",
+      "items": [
+        "accessibility",
+        "bidirectionality",
+        "breakpoints"
+      ]
+    },
+    {
+      "title": "styles",
+      "icon": "mdi-run",
+      "items": [
+        "text-and-typography",
+        "transitions"
+      ]
+    },
+    {
+      "title": "其他资源",
+      "icon": "mdi-bottle-tonic-plus",
+      "items": [
+        "application"
+      ]
+    },
+    {
+      "title": "关于我们",
+      "icon": "mdi-rugby",
+      "items": [
+        "click-outside",
+        "touch"
+      ]
+    },
+    {
+      "title": "Promotions",
+      "icon": "mdi-tag",
+      "items": [
+        "jobs",
+        "themes"
+      ]
+    }
+  ]

@@ -1,0 +1,9 @@
+{
+    "introducation/item1": "/introduction/item1",
+    "getting-started/landcover/": "/getting-started/landcover",
+    "getting-started/landcover_gep/": "/getting-started/landcover_gep",
+    "getting-started/urbangreenspace/": "/getting-started/urbangreenspace",
+    "getting-started/urbanroads/": "/getting-started/urbanroads",
+    "getting-started/urbanwaterbody/": "/getting-started/urbanwaterbody",
+    "getting-started/landblocks/": "/getting-started/landblocks"
+}
