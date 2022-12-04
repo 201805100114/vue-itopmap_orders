@@ -1,6 +1,6 @@
 <template>
    <!-- 底图切换控件 容器 -->
-   <div id='layers' class="ol-control notPhone" style="bottom:2.5em;background:white;left:0.5em;border:1px solid #969696;opacity:0.8">
+   <div id='layers' ref="layers" class="ol-control notPhone" style="bottom:2.5em;background:white;left:0.5em;border:1px solid #969696;opacity:0.8">
       <img src="../assets/BasemapInactive.png" id="bming" style="margin:1px">
       <div id='lyscontent' style="margin:6px;display:none;float:left;height:250px">
         <div style="float:left;height:25px">
@@ -59,17 +59,19 @@
 <script>
 
 export default {
-  name: "DatePicker",
-  data: () => ({
-    
-  }),
-  computed: {
-
+  name: "layerswitchcontrol",
+  data() {
+    return {
+      divDom : null
+    }
   },
+  mounted() {
+    this.divDom = this.$refs.layers;
+  }
 }
 </script>
 <style>
-.bmapGem {
+     .bmapGem {
         border: 2px #ccc solid;
         margin: 3px;
         width: 100px;

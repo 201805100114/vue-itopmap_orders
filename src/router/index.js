@@ -20,8 +20,6 @@ const router = new Router({
   },
   routes: [
     layout('Default', [
-      // route('DashBoard'),
-
       // Home
       route('VuetifyHome', null, 'home/vuetifyhome'),
 
@@ -36,6 +34,7 @@ const router = new Router({
 
       // AddData
       route('AddData', null, 'useraccountmanage/adddata'),
+
       // Tables
       //route('Regular Tables', null, 'tables/regular'),
 
@@ -90,7 +89,6 @@ router.afterEach((to)=>{
   if (to.path.search('landcover') === -1) {  // 路由中没有landcover
     data.state.leftCardShowFlag = false
   }else{
-
     data.state.leftCardShowFlag = true
   }
 })

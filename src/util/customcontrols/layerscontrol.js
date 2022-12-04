@@ -15,10 +15,10 @@ export class LayersControl extends Control {
     this.element = element;
     this.baseMap = opt_options["baseMap"];
     this.overlay = opt_options["overlay"];
-    
-    // 容器
-    this.element.addEventListener('mouseover', this.handleOnMouseOver.bind(this), false);
-    this.element.addEventListener('mouseleave', this.handleOnMouseLeave.bind(this), false);
+    this.controldiv = opt_options["controldiv"];
+
+    this.controldiv.controldiv.addEventListener('mouseover', this.handleOnMouseOver.bind(this), false);
+    this.controldiv.controldiv.addEventListener('mouseleave', this.handleOnMouseLeave.bind(this), false);
 
     // 监听 鼠标悬浮高亮，鼠标离开取消高亮，鼠标点击时切换底图
     var bmapGemArray = $('.bmapGem');

@@ -107,8 +107,9 @@
 
       this.init(this.markdown)
 
-      const { assets, actions = [] } = this.frontmatter
-      this.$load(assets)
+      const { assets, actions = [] } = this.frontmatter;
+      console.log(assets);
+      //this.$load(assets)
 
       for (const action of actions) {
         this.$store.dispatch(action)
@@ -121,16 +122,16 @@
 
     methods: {
       init (md) {
-        const {
-          attributes = {},
-          toc = [],
-          vue = {},
-        } = md
-
-        vue.Component.name = this.page
-        this.frontmatter = attributes
-        this.toc = toc
-        this.Component = vue.component
+        // const {
+        //   attributes = {},
+        //   toc = [],
+        //   vue = {},
+        // } = md
+        console.log(md);
+        //vue.Component.name = this.page
+        // this.frontmatter = attributes
+        // this.toc = toc
+        // this.Component = vue.component
       },
 
     },
