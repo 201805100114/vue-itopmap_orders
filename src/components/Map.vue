@@ -16,7 +16,6 @@ import {sync} from "vuex-pathify";
 import Feature from 'ol/Feature';
 import '@/styles/ol3-layerswitcher.css';
 import {defaults as defaultControls, ScaleLine} from 'ol/control';
-// 导入自定义的控制模块, 必须加 {}, 不然会报错
 import {CreateDrawControl} from '@/util/customcontrols/createdrawcontrol'
 import {BackDrawControl} from '@/util/customcontrols/backdrawcontrol'
 import {ClearDrawControl} from '@/util/customcontrols/cleardrawcontrol'
@@ -44,17 +43,12 @@ export default {
         overlay: null
       },
       layers : null,
-      isSelectGeojson: false,
-      /**
-       * 测试用的Geojson roi数组
-       * @type {Array}
-       */
-       geoJsonArray: [
+      testGeojsonArray: [
         {"type" : "Feature","properties": "","geometry" : {"type": "Polygon", "coordinates":  [11591141.978821806609631, 3546469.098744962830096 , 11577227.042500456795096, 3546469.098744962830096 , 11577227.042500456795096, 3557221.684605775866657 ,11591141.978821806609631, 3557221.684605775866657 ,11591141.978821806609631, 3546469.098744962830096 ] ,"realcoordinates": ""}},
         {"type" : "Feature","properties": "","geometry" : {"type": "Polygon", "coordinates":  [ 11591141.978821806609631, 3557221.684605775866657 , 11577227.042500456795096, 3557221.684605775866657 , 11577227.042500456795096, 3567983.455974561162293 , 11591141.978821806609631, 3567983.455974561162293 , 11591141.978821806609631, 3557221.684605775866657 ] ,"realcoordinates": ""}}
        ],
-            /**
-       * 用户绘制roi的面积，用字典解决无法在其他地方修改变量值的问题, roi:region of interest
+      /**
+       * roi:region of interest
       */
       roiArea: {
         roiArea : ''
@@ -134,18 +128,17 @@ export default {
         measureTooltip : null
       },
        /**
-       * 用户绘制多边形时显示的消息。
+       * 用户绘制多边形时显示的消息。Msg: Message
        * @type {string}
        */
-      continuePolygonMsg: '单击以继续绘制多边形',
+      userContinueToDrawPolygonMsg: '单击以继续绘制多边形',
       pointerMoveHandler: null,
       source: {
         source : null
       },
-      helpMsg : ""
+      userHelpMsg : ""
     }
   },
-  props: ['divDom'],
   components: {
     layerswitchcontrol,
   },
@@ -167,14 +160,14 @@ export default {
       return;
     }
     /** @type {string} */
-    this1.helpMsg = '单击以开始绘制';
+    this1.userHelpMsg = '单击以开始绘制';
     if (this1.sketch.sketch) {
       const geom = this1.sketch.sketch.getGeometry();
       if (geom instanceof Polygon) {
-        this1.helpMsg = this1.continuePolygonMsg;
+        this1.userHelpMsg = this1.userContinueToDrawPolygonMsg;
       }
     }
-    this1.helpTooltipElement.helpTooltipElement.innerHTML = this1.helpMsg;
+    this1.helpTooltipElement.helpTooltipElement.innerHTML = this1.userHelpMsg;
     this1.helpTooltip.helpTooltip.setPosition(evt.coordinate);
     this1.helpTooltipElement.helpTooltipElement.classList.remove('hidden');
     };
@@ -339,11 +332,11 @@ methods: {
     // 根据测试的geojson在地图绘制面
     drawGeojson() {
       let features = [];
-      for(let r = 0; r < this.geoJsonArray.length; r++){
+      for(let r = 0; r < this.testGeojsonArray.length; r++){
         let polygoncoordinates = [];
-        for(let i = 0; i < this.geoJsonArray[r]["geometry"]["coordinates"].length; i += 2) {
-          if (i < this.geoJsonArray[r]["geometry"]["coordinates"].length - 1) {
-            polygoncoordinates.push([this.geoJsonArray[r]["geometry"]["coordinates"][i], this.geoJsonArray[r]["geometry"]["coordinates"][i + 1]]);
+        for(let i = 0; i < this.testGeojsonArray[r]["geometry"]["coordinates"].length; i += 2) {
+          if (i < this.testGeojsonArray[r]["geometry"]["coordinates"].length - 1) {
+            polygoncoordinates.push([this.testGeojsonArray[r]["geometry"]["coordinates"][i], this.testGeojsonArray[r]["geometry"]["coordinates"][i + 1]]);
           }
         }
         let featurePolygon = new Feature({
