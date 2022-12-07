@@ -35,6 +35,11 @@ const router = new Router({
       // AddData
       route('AddData', null, 'useraccountmanage/adddata'),
 
+      // 打开网站切换到数据入库页面
+      {
+        path: '/',
+        redirect: 'useraccountmanage/adddata'
+      },
       // Tables
       //route('Regular Tables', null, 'tables/regular'),
 

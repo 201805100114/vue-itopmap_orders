@@ -16,25 +16,20 @@ import {sync} from "vuex-pathify";
 import Feature from 'ol/Feature';
 import '@/styles/ol3-layerswitcher.css';
 import {defaults as defaultControls, ScaleLine} from 'ol/control';
-import {CreateDrawControl} from '@/util/customcontrols/createdrawcontrol'
-import {BackDrawControl} from '@/util/customcontrols/backdrawcontrol'
-import {ClearDrawControl} from '@/util/customcontrols/cleardrawcontrol'
-import {LayersControl } from '../util/customcontrols/layerscontrol';
-import XYZ from 'ol/source/XYZ'
-import TileArcGISRest from 'ol/source/TileArcGISRest'
-import Stamen from 'ol/source/Stamen'
-import layerswitchcontrol from '../components/LayerSwitchControl.vue'
-// import { truncate } from 'fs';
+import XYZ from 'ol/source/XYZ';
+import TileArcGISRest from 'ol/source/TileArcGISRest';
+import Stamen from 'ol/source/Stamen';
+import layerswitchcontrol from '../components/LayerSwitchControl.vue';
+// 自定义的控件
+import {CreateDrawControl} from '@/util/customcontrols/createdrawcontrol';
+import {BackDrawControl} from '@/util/customcontrols/backdrawcontrol';
+import {ClearDrawControl} from '@/util/customcontrols/cleardrawcontrol';
+import {LayersControl } from '@/util/customcontrols/layerscontrol';
 
-//基于变量在外部, 监听函数内存在访问不到的问题(javascript基础问题), 变量被统一定义在data域中
 export default {
   name: 'Map',
   data() {
     return {
-      /**
-       * Openlayers地图对象           ，。
-       * @type {Object}
-       */
       map: null,
       baseMap: {
         baseMap: null
@@ -66,7 +61,7 @@ export default {
         draw : null
       },
       /**
-       * 用户绘制的region of interest polygon数组
+       * 用户绘制的roi数组
        */
       userDrawnPolygons : {
         userDrawnPolygons : []
@@ -154,59 +149,62 @@ export default {
   // 初始化页面完成后，再对dom节点进行相关操作
   mounted(){
     this.source.source = new VectorSource();
-    var this1 = this;   // 解决访问不到data中属性的问题(javascript基础薄弱)
+    var that = this;   // 解决访问不到data中属性的问题(javascript基础薄弱)
     this.pointerMoveHandler = function (evt) {
-    if (evt.dragging) {
-      return;
-    }
-    /** @type {string} */
-    this1.userHelpMsg = '单击以开始绘制';
-    if (this1.sketch.sketch) {
-      const geom = this1.sketch.sketch.getGeometry();
-      if (geom instanceof Polygon) {
-        this1.userHelpMsg = this1.userContinueToDrawPolygonMsg;
+      if (evt.dragging) {
+        return;
       }
-    }
-    this1.helpTooltipElement.helpTooltipElement.innerHTML = this1.userHelpMsg;
-    this1.helpTooltip.helpTooltip.setPosition(evt.coordinate);
-    this1.helpTooltipElement.helpTooltipElement.classList.remove('hidden');
+      /** @type {string} */
+      that.userHelpMsg = '单击以开始绘制';
+      if (that.sketch.sketch) {
+        const geom = that.sketch.sketch.getGeometry();
+        if (geom instanceof Polygon) {
+          that.userHelpMsg = that.userContinueToDrawPolygonMsg;
+        }
+      }
+      that.helpTooltipElement.helpTooltipElement.innerHTML = that.userHelpMsg;
+      that.helpTooltip.helpTooltip.setPosition(evt.coordinate);
+      that.helpTooltipElement.helpTooltipElement.classList.remove('hidden');
     };
     
     //创建绘制按钮需要操作的变量通过字典传入，测试不通过这种方式变量值无法成功修改(javascript薄弱)
     let createDrawControlOptions = {
-      "pointerMoveHandler" : this1.pointerMoveHandler,
-      "source" : this1.source,
-      "measureTooltipElement" : this1.measureTooltipElement,
-      "measureTooltip" : this1.measureTooltip,
-      "currentOverlayIndex" : this1.currentOverlayIndex,
-      "measureOverlayIndexArray" : this1.measureOverlayIndexArray,
-      "helpTooltipElement" : this1.helpTooltipElement,
-      "helpTooltip" : this1.helpTooltip,
-      "isDrawingRoiFlag" : this1.isDrawingRoiFlag,
-      "sketch" : this1.sketch,
-      "coordinateArray" : this1.coordinateArray,
-      "userDrawnPolygons" : this1.userDrawnPolygons,
-      "draw" : this1.draw,
-      "roiArea" : this1.roiArea
+      "pointerMoveHandler" : that.pointerMoveHandler,
+      "source" : that.source,
+      "measureTooltipElement" : that.measureTooltipElement,
+      "measureTooltip" : that.measureTooltip,
+      "currentOverlayIndex" : that.currentOverlayIndex,
+      "measureOverlayIndexArray" : that.measureOverlayIndexArray,
+      "helpTooltipElement" : that.helpTooltipElement,
+      "helpTooltip" : that.helpTooltip,
+      "isDrawingRoiFlag" : that.isDrawingRoiFlag,
+      "sketch" : that.sketch,
+      "coordinateArray" : that.coordinateArray,
+      "userDrawnPolygons" : that.userDrawnPolygons,
+      "draw" : that.draw,
+      "roiArea" : that.roiArea
     };
+
     //创建撤销绘制按钮需要操作的变量通过字典传入，测试不通过这种方式变量值无法成功修改(javascript基础薄弱)
     let backDrawControlOptions = {
-      "draw" :  this1.draw,
+      "draw" :  that.draw,
     }
+
     //创建清空绘制按钮需要操作的变量通过字典传入，测试不通过这种方式变量值无法成功修改(javascript基础薄弱)
     let clearDrawControlOptions = {
-      "draw" :  this1.draw,
-      "isDrawingRoiFlag" : this1.isDrawingRoiFlag,
-      "userDrawnPolygons" : this1.userDrawnPolygons,
-      "source" : this1.source,
-      "measureOverlayIndexArray" : this1.measureOverlayIndexArray,
-      "currentOverlayIndex" : this1.currentOverlayIndex,
-      "helpTooltipElement" : this1.helpTooltipElement,
+      "draw" :  that.draw,
+      "isDrawingRoiFlag" : that.isDrawingRoiFlag,
+      "userDrawnPolygons" : that.userDrawnPolygons,
+      "source" : that.source,
+      "measureOverlayIndexArray" : that.measureOverlayIndexArray,
+      "currentOverlayIndex" : that.currentOverlayIndex,
+      "helpTooltipElement" : that.helpTooltipElement,
     }
+
     //创建图层切换按钮需要操作的变量通过字典传入，测试不通过这种方式变量值无法成功修改(javascript基础薄弱)
     let layersControlOptions = {
-      "baseMap": this1.baseMap,
-      "overlay": this1.overlay,
+      "baseMap": that.baseMap,
+      "overlay": that.overlay,
       "controldiv": {"controldiv": document.getElementById("layers")}
     }
 
@@ -322,9 +320,9 @@ export default {
      * 手柄指针移动。
      * @param {import("../src/ol/MapBrowserEvent").default} evt The event.
      */
-  let mouseoutthis = this;
+  let mouseoutpointer = this;
   this.map.getViewport().addEventListener('mouseout', function () {
-    mouseoutthis.helpTooltipElement.helpTooltipElement.classList.add('hidden');
+    mouseoutpointer.helpTooltipElement.helpTooltipElement.classList.add('hidden');
   });
   this.drawGeojson();
 },

@@ -54,7 +54,7 @@ export class ClearDrawControl extends Control {
           this.measureOverlayIndexArray.measureOverlayIndexArray.pop();
           this.getMap().removeOverlay(olLyrs[this.measureOverlayIndexArray.measureOverlayIndexArray.pop()]);
           this.currentOverlayIndex.currentOverlayIndex = this.currentOverlayIndex.currentOverlayIndex - 1;
-          console.log("this.currentOverlayIndex.currentOverlayIndex", this.currentOverlayIndex.currentOverlayIndex);
+          // console.log("this.currentOverlayIndex.currentOverlayIndex", this.currentOverlayIndex.currentOverlayIndex);
       }
       // 用户正在绘制的roi的状态
       } else {
