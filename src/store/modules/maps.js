@@ -51,7 +51,7 @@ const state = {
                     // 无数据 （用绿地数据占位）
                     lefturl: 'Order:02_origin',
                     righturl: 'Order:02_result',
-                    extent: [104.000000,30.416,104.125000,30.500000]
+                    extent: [103.000000,30.416,105.125000,30.500000]
                 },
             info:
                 {

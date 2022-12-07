@@ -2,7 +2,7 @@
 <div class = "main">    
     <div id="map-container" class="map-container"></div>
     <layerswitchcontrol />
-  </div>
+</div>
 </template>
 <script>
 import 'ol/ol.css';
@@ -225,7 +225,7 @@ export default {
         source: new ImageWMS({
           ratio: 1,
           projectiton: 'EPSG:3857',
-          url: 'https://geo.culturalmapofcdutyouth.com/geoserver/TestLoading/wms',
+          url: 'http://geo.culturalmapofcdutyouth.com/geoserver/TestLoading/wms',
           params: {'FORMAT': format,
                 'VERSION': '1.1.1',  
                 "STYLES": '',
