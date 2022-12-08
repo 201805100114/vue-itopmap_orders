@@ -1,6 +1,10 @@
 <template>
-<div class = "main">    
+<div class = "main">
     <div id="map-container" class="map-container"></div>
+    <!-- 自定义控件 -->
+    <createdrawcontrol />
+    <backdrawcontrol />
+    <cleardrawcontrol />
     <layerswitchcontrol />
 </div>
 </template>
@@ -19,7 +23,12 @@ import {defaults as defaultControls, ScaleLine} from 'ol/control';
 import XYZ from 'ol/source/XYZ';
 import TileArcGISRest from 'ol/source/TileArcGISRest';
 import Stamen from 'ol/source/Stamen';
-import layerswitchcontrol from '../components/LayerSwitchControl.vue';
+
+import createdrawcontrol from  '../components/customcontrols/CreateDrawControl.vue';
+import backdrawcontrol from  '../components/customcontrols/BackDrawControl.vue';
+import cleardrawcontrol from  '../components/customcontrols/ClearDrawControl.vue';
+import layerswitchcontrol from '../components/customcontrols/LayerSwitchControl.vue';
+
 // 自定义的控件
 import {CreateDrawControl} from '@/util/customcontrols/createdrawcontrol';
 import {BackDrawControl} from '@/util/customcontrols/backdrawcontrol';
@@ -136,6 +145,9 @@ export default {
   },
   components: {
     layerswitchcontrol,
+    createdrawcontrol,
+    backdrawcontrol,
+    cleardrawcontrol
   },
   computed: {
     ...sync('app', [
