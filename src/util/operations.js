@@ -178,9 +178,8 @@ export function swipe(leftLayerName, rightLayerName, extent, mapDivId, swipeDivI
         view: new View({
             center: olProj.fromLonLat(center),
             extent: olProj.transformExtent(extent, 'EPSG:4326','EPSG:3857'),
-            zoom: 1,
-            maxZoom: 16,
-            minZoom: 1
+            zoom: 16,
+            maxZoom: 20
         })
     })    
     var swipe = document.getElementById(swipeDivId)

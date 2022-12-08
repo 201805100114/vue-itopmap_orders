@@ -349,7 +349,7 @@ methods: {
       layer.set('title', 'geoJson');
       layer.set('id', 'geoJson');
       layer.set('class', 'overlay');
-      layer.set('visible', false);
+      //layer.set('visible', false);
       this.layers.push(layer);
     },
 
