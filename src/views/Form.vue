@@ -272,6 +272,7 @@ export default {
     //  对应遥感数据选择影像 --libin
     extractImage: [],
     updateareaMap: "",
+    isUpdating: false,
     formRule: {
       name: [
         v => !!v || '名字不能为空',

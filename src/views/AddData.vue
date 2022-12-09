@@ -16,8 +16,13 @@
           </v-col>
         </v-row>  
     </div>
+    
     <Form/>
     <AppMap />
+    <createdrawcontrol />
+    <backdrawcontrol />
+    <cleardrawcontrol />
+    <layerswitchcontrol />
   </div>
 </v-container> 
 </template>
@@ -26,11 +31,20 @@
 import AppMap from '../components/Map.vue'
 import {sync} from "vuex-pathify"
 
+import createdrawcontrol from  '../components/CreateDrawControl.vue';
+import backdrawcontrol from  '../components/BackDrawControl.vue';
+import cleardrawcontrol from  '../components/ClearDrawControl.vue';
+import layerswitchcontrol from '../components/LayerSwitchControl.vue';
+import Form from '../views/Form.vue';
 export default {
   name: 'AddData',
   components: {
     AppMap,
-    Form: () => import("../views/Form"),
+    Form,
+    layerswitchcontrol,
+    createdrawcontrol,
+    backdrawcontrol,
+    cleardrawcontrol,
   },
   data() {
     return {
@@ -38,26 +52,26 @@ export default {
     }
   },
 
-    methods: {
-      // emulates external source
-      loadFeatures () {
-        return new Promise(resolve => {
-          setTimeout(() => {
-            // generate GeoJSON random features
-            resolve([
-              this.currentFeature
-            ])
-          }, 5000)
-        })
-      },
-      submitRoi() {
-      this.formShowFlag = !this.formShowFlag
-      // if (this.coordinateArrayLength != 0){
-      //   this.uploadFileShowFlag = false;
-      // }
-    }
+  methods: {
+    // emulates external source
+    loadFeatures () {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          // generate GeoJSON random features
+          resolve([
+            this.currentFeature
+          ])
+        }, 5000)
+      })
     },
-    computed: {
+    submitRoi() {
+    this.formShowFlag = !this.formShowFlag
+    // if (this.coordinateArrayLength != 0){
+    //   this.uploadFileShowFlag = false;
+    // }
+  }
+  },
+  computed: {
     ...sync('app', [
       'navigationShowFlag','detailCardShowFlag', 'leftCardShowFlag',
       'arrowShowFlag','formShowFlag'
@@ -65,7 +79,7 @@ export default {
     ...sync('form', [
       'formData','area','uploadFileShowFlag'
     ]),
-    },
+  },
   }
 </script>
 <style lang="less">

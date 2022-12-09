@@ -1,11 +1,6 @@
 <template>
 <div class = "main">
     <div id="map-container" class="map-container"></div>
-    <!-- 自定义控件 -->
-    <createdrawcontrol />
-    <backdrawcontrol />
-    <cleardrawcontrol />
-    <layerswitchcontrol />
 </div>
 </template>
 <script>
@@ -23,11 +18,6 @@ import {defaults as defaultControls, ScaleLine} from 'ol/control';
 import XYZ from 'ol/source/XYZ';
 import TileArcGISRest from 'ol/source/TileArcGISRest';
 import Stamen from 'ol/source/Stamen';
-
-import createdrawcontrol from  '../components/CreateDrawControl.vue';
-import backdrawcontrol from  '../components/BackDrawControl.vue';
-import cleardrawcontrol from  '../components/ClearDrawControl.vue';
-import layerswitchcontrol from '../components/LayerSwitchControl.vue';
 
 // 自定义的控件
 import {CreateDrawControl} from '@/util/customcontrols/createdrawcontrol';
@@ -143,12 +133,6 @@ export default {
       userHelpMsg : ""
     }
   },
-  components: {
-    layerswitchcontrol,
-    createdrawcontrol,
-    backdrawcontrol,
-    cleardrawcontrol
-  },
   computed: {
     ...sync('app', [
       'navigationShowFlag','detailCardShowFlag', 'leftCardShowFlag',
@@ -194,7 +178,8 @@ export default {
       "coordinateArray" : that.coordinateArray,
       "userDrawnPolygons" : that.userDrawnPolygons,
       "draw" : that.draw,
-      "roiArea" : that.roiArea
+      "roiArea" : that.roiArea,
+      "formShowFlag": that.formShowFlag
     };
 
     //创建撤销绘制按钮需要操作的变量通过字典传入，测试不通过这种方式变量值无法成功修改(javascript基础薄弱)
