@@ -35,6 +35,9 @@ const router = new Router({
       // AddData
       route('AddData', null, 'useraccountmanage/adddata'),
 
+      // About
+      route('About', null, 'About'),
+
       // 打开网站切换到数据入库页面
       {
         path: '/',

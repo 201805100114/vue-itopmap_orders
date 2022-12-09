@@ -7,6 +7,7 @@ import store from './store'
 import { sync } from 'vuex-router-sync'
 import axios from 'axios'
 import VueAxiosPlugin from 'vue-axios-plugin';
+import i18n from './plugins/VueI18n/index'
 Vue.use(VueAxiosPlugin, {
   // 请求拦截处理
   reqHandleFunc: config => config,
@@ -39,5 +40,6 @@ new Vue({
   router,
   vuetify,
   store,
+  i18n,
   render: h => h(App),
 }).$mount('#app')
