@@ -32,3 +32,5 @@ store : store state associated and needed files, such as state, mutations and so
 https://lq782655835.github.io/blogs/team-standard/recommend-vue-project-structure.html
 https://zhuanlan.zhihu.com/p/524683792
 
+components文件中无法创建子文件夹
+

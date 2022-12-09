@@ -1,18 +1,11 @@
-const path = require('path');//引入path模块
-// frontmatter-markdown-loader
-const Mode = require('frontmatter-markdown-loader/mode')
-
-function resolve(dir){
-    return path.join(__dirname,dir)//path.join(__dirname)设置绝对路径
-}
-module.exports={
+module.exports = {
   transpileDependencies: [
     'vuetify'
-  ],	
+  ],
   devServer: {
     proxy: {
     '/api': {
-    target: 'http://43.142.143.244:3000/',
+    target: 'http://121.4.138.96',
     changeOrigin: true, // 解决跨域
     pathRewrite: {
     '^/api': '',
@@ -23,10 +16,20 @@ module.exports={
       pathRewrite: {
       '^/cgi-bin': '',
       },
-    }
+      }
     },
     },
     },
+}
+
+const path = require('path');//引入path模块
+// frontmatter-markdown-loader
+const Mode = require('frontmatter-markdown-loader/mode')
+
+function resolve(dir){
+    return path.join(__dirname,dir)//path.join(__dirname)设置绝对路径
+}
+module.exports={	
     chainWebpack: config =>{
         // path
 		config.resolve.alias

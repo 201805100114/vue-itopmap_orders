@@ -24,10 +24,10 @@ import XYZ from 'ol/source/XYZ';
 import TileArcGISRest from 'ol/source/TileArcGISRest';
 import Stamen from 'ol/source/Stamen';
 
-import createdrawcontrol from  '../components/customcontrols/CreateDrawControl.vue';
-import backdrawcontrol from  '../components/customcontrols/BackDrawControl.vue';
-import cleardrawcontrol from  '../components/customcontrols/ClearDrawControl.vue';
-import layerswitchcontrol from '../components/customcontrols/LayerSwitchControl.vue';
+import createdrawcontrol from  '../components/CreateDrawControl.vue';
+import backdrawcontrol from  '../components/BackDrawControl.vue';
+import cleardrawcontrol from  '../components/ClearDrawControl.vue';
+import layerswitchcontrol from '../components/LayerSwitchControl.vue';
 
 // 自定义的控件
 import {CreateDrawControl} from '@/util/customcontrols/createdrawcontrol';

@@ -15,7 +15,7 @@
           <div class="bmapGem" id="osmLayer">
             <img src="../assets/esriStreet.png" class="bmImg">
             <br>
-            Open Street Map
+            Open Street Map 
           </div>
           <div class="bmapGem" id="satelliteLayer_2020">
             <img src="../assets/aerials2010.png" class="bmImg">
