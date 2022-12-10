@@ -15,28 +15,28 @@ const state = {
     // 路由相关信息 --libin
     items: [
         {
-            title: '特性介绍',
+            title: 'navigationbar.characteristicintroduction',
             icon: 'mdi-view-dashboard',
             to: '/doc/introduction',
             items: [
                 {
-                    title: '1-服务标准',
+                    title: 'navigationbarItem.servicestandards',
                     icon: '',
                     to: '/doc/introduction/biaozhun',
                 },
                 {
-                    title: '2-服务流程',
+                    title: 'navigationbarItem.serviceflow',
                     icon: '',
                     to: '/doc/introduction/liucheng',
                 },],
         },
         {
-            title: '空间数据管理',
+            title: 'navigationbar.spatialdatamanagement',
             icon: 'mdi-view-dashboard',
             to: '/useraccountmanage/',
             items: [
                 {
-                    title: '1-数据入库',
+                    title: 'navigationbarItem.dataentry',
                     icon: 'mdi-database-plus-outline',
                     to: '/useraccountmanage/adddata/',
                 }
@@ -44,13 +44,13 @@ const state = {
         },
         {
             id: 'extract',
-            title: '专题要素信息提取',
+            title: 'navigationbar.extractionofinformationonthematicelements',
             icon: 'mdi-clipboard-outline',
             to: '/examples/',
             items: [
                 {
                     icon: '',
-                    title: '1-城市绿地提取',
+                    title: 'navigationbarItem.urbangreenspaceextraction',
                     to: '/examples/landcover1/'
                 },
                 {
@@ -72,7 +72,7 @@ const state = {
         },
         {
             id: 'extract',
-            title: '其他遥感信息提取',
+            title: 'navigationbar.otherremotesensinginformationextraction',
             icon: 'mdi-cube',
             to: '/examples/',
             items: [
@@ -89,7 +89,7 @@ const state = {
             ],
         },
         {
-            title: '关于我们',
+            title: 'navigationbar.aboutus',
             icon: 'mdi-rugby',
             to: '/about/',
         },

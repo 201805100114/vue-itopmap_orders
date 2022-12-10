@@ -25,6 +25,8 @@
 
     <default-notifications />
 
+    <LanguageSwitchVue />
+
     <default-account />
   </v-app-bar>
 </template>
@@ -33,7 +35,7 @@
   // Utilities
   import {changeAppStyle} from "@/util/operations";
   import {sync} from "vuex-pathify";
-
+  import LanguageSwitchVue from "./widgets/LanguageSwitch";
   export default {
     name: 'DefaultBar',
 
@@ -65,7 +67,7 @@
         /* webpackChunkName: "default-search" */
         './widgets/Search'
       ),
-
+      LanguageSwitchVue
     },
   }
 </script>
