@@ -416,7 +416,7 @@ methods: {
         height: 100%
       }
       .map-container {
-        position: absolute;
+        position: relative;
         left: 0;
         top: 0;
         width: calc(100%);

@@ -30,7 +30,7 @@
           </template> -->
 
           <!-- 标题 -->
-          <v-card-title style="font-size:1.5em">{{ this.param.title }}</v-card-title>
+          <v-card-title style="font-size:1.5em">{{ $t(this.param.title) }}</v-card-title>
           <!-- 评分（暂时保留） -->
           <v-card-text>
             <v-row align="center" class="mx-0">
@@ -53,7 +53,7 @@
             </div> -->
             <!-- 总体描述 -->
             <v-row align="center" class="mx-0">
-              <div>{{ this.param.description }}</div>
+              <div>{{ $t(this.param.description) }}</div>
             </v-row>
           </v-card-text>
 
@@ -73,7 +73,7 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title v-text="item.text"></v-list-item-title>
+                <v-list-item-title v-text="$t(item.text)"></v-list-item-title>
               </v-list-item-content>
               <v-btn
                   v-if="item.detail"

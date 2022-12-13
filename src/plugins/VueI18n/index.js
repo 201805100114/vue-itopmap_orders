@@ -18,6 +18,17 @@ const messages = {
             serviceflow: '服务流程',
             dataentry: '数据入库',
             urbangreenspaceextraction: '城市绿地提取',
+            urbanwaterbodyextraction: '城市水体提取',
+            urbanbuildingextraction: '城市建筑提取',
+            urbanroadextraction: '城市道路提取',
+            agriculturalplotextraction: '农业地块提取',
+            Changedetectionconstructionland: '变化检测',
+            ecovalueproducts: '生态价值产品'
+        },
+        mapinfoItem: {
+            Informationontheboundariesofgreenspacessuchasparkstreesandmeadowsinthecity: '城市内公园、树木、草地等绿地边界信息',
+            datasourcehighresolutionimageslices:'数据源：高分辨率影像切片',
+            
         },
         name: '可乐',
     },
@@ -34,26 +45,24 @@ const messages = {
             serviceflow: 'Service flow',
             dataentry: 'Data entry',
             urbangreenspaceextraction: 'Urban green space extraction',
+            urbanwaterbodyextraction: 'Urban water body extraction',
+            urbanbuildingextraction: 'Urban Building Extraction',
+            urbanroadextraction: 'Urban Road Extraction',
+            agriculturalplotextraction: 'Agricultural plot extraction',
+            changedetectionconstructionland: 'Change detection (construction land)',
+            ecovalueproducts: 'Eco-value products'
+        },
+        mapinfoItem: {
+            Informationontheboundariesofgreenspacessuchasparkstreesandmeadowsinthecity: 'Information on the boundaries of green spaces such as parks, trees and meadows in the city',
+            datasourcehighresolutionimageslices: 'Data source: High-resolution image slices'
         },
         name: 'cola',
-    },
-    ja: {
-        navigationbar: {
-            characteristicintroduction: 'キャラクタライゼーション',
-        },
-        navigationbarItem:{
-            servicestandards: 'サービス基準',
-            serviceflow: 'サービスの流れ',
-            dataentry: 'データ入力',
-            urbangreenspaceextraction: 'Urban green space extraction',
-        },
-        name: 'コーラ',
     },
 };
 
 // 通过选项创建 VueI18n 实例
 const i18n = new VueI18n({
-    locale: 'ja', // 设置默认地区
+    locale: 'zn', // 设置默认地区
     messages, // 设置配置信息
 });
 

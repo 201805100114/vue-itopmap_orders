@@ -19,7 +19,7 @@
  </script>
  <style>
   .start-draw { 
-    top: 90px; 
+    top: 50px; 
     left: 1.7em;
   }
   .ol-touch{

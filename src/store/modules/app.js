@@ -54,19 +54,19 @@ const state = {
                     to: '/examples/landcover1/'
                 },
                 {
-                    title: '2-城市水体提取',
+                    title: 'navigationbarItem.urbanwaterbodyextraction',
                     to: '/examples/landcover2/'
                 },
                 {
-                    title: '3-城市建筑提取',
+                    title: 'navigationbarItem.urbanbuildingextraction',
                     to: '/examples/landcover3/'
                 },
                 {
-                    title: '4-城市道路提取',
+                    title: 'navigationbarItem.urbanroadextraction',
                     to: '/examples/landcover4/'
                 },
                 {
-                    title: '5-农业地块提取',
+                    title: 'navigationbarItem.agriculturalplotextraction',
                     to: '/examples/landcover5/'
                 }],
         },
@@ -77,12 +77,12 @@ const state = {
             to: '/examples/',
             items: [
                 {
-                    title: '6-变化检测（建设用地）',
+                    title: 'navigationbarItem.Changedetectionconstructionland',
                     icon: '',
                     to: '/examples/landcover6/',
                 },
                 {
-                    title: '7-生态价值产品',
+                    title: 'navigationbarItem.ecovalueproducts',
                     icon: '',
                     to: '/examples/landcover7/',
                 },

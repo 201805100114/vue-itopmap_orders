@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="px-2"  style="z-index: 998;">
+    <div class="px-2"  style="z-index: 998;left: 1.7em;">
       <!-- <default-drawer-header/> -->
 
       <v-divider class="mx-3 mb-2"/>

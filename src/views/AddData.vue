@@ -4,21 +4,25 @@
 <v-container 
   fluid 
   >
-  <div class = "main">
-    <div class="head">
+  <div class = "main" >
+    <div class="head" style="position: absolute;z-index: 997;left: 1.2em;">
           <v-row>
           <v-col cols = "12">
               <v-btn
                   @click = "submitRoi()"
-                  class="black--text mt-0 mb-5"
+                  class="black--text mt-0 pr-0"
                   color="sucess"
-                  >提交研究区域</v-btn>                  
+                  icon
+                  >
+                  <v-icon dark style="padding-left:0">
+                    mdi-cloud-upload-outline
+                  </v-icon>
+                </v-btn>                  
           </v-col>
         </v-row>  
     </div>
-    
-    <Form/>
     <AppMap />
+    <Form />
     <createdrawcontrol />
     <backdrawcontrol />
     <cleardrawcontrol />

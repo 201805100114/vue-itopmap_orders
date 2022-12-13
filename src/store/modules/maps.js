@@ -18,13 +18,13 @@ const state = {
             info:
                 {
                     imgUrl:"https://cdn.jsdelivr.net/gh/Napier7/Picgo/itopmap-order/1-green.jpg",
-                    title: "城市绿地提取",
+                    title: "navigationbarItem.urbangreenspaceextraction",
                     //数据描述（对应卡片中标题下的灰色字体）
                     description:"城市内公园、树木、草地等绿地边界信息",
                     //数据信息（与卡片中的List title对应）
                     items:
                         [
-                            {icon: 'mdi-heart', text: "数据源：高分辨率影像切片"},
+                            {icon: 'mdi-heart', text: "mapinfoItem.datasourcehighresolutionimageslices"},
                             {icon: 'mdi-table', text: "分辨率：1.34e-06 d / 0.5 m"},
                             {icon: 'mdi-archive-clock', text: "覆盖范围",detail:[
                                     {text: 'QAI：***'},
@@ -55,7 +55,7 @@ const state = {
             info:
                 {
                     imgUrl:"https://s3.bmp.ovh/imgs/2022/03/941ef347e2d44195.jpg",
-                    title: "城市水体提取",
+                    title: "navigationbarItem.urbanwaterbodyextraction",
                     description:"",
                     items:
                         [
@@ -81,7 +81,7 @@ const state = {
             info:
                 {
                     imgUrl:"https://s3.bmp.ovh/imgs/2022/03/2bb440794a0ed62e.jpg",
-                    title: "城市建筑提取",
+                    title: "navigationbarItem.urbanbuildingextraction",
                     description:"",
                     items:
                         [
@@ -107,7 +107,7 @@ const state = {
             info:
                 {
                     imgUrl:"https://s3.bmp.ovh/imgs/2022/03/0c906bc1d36edc80.jpg",
-                    title: "城市道路提取",
+                    title: "navigationbarItem.urbanroadextraction",
                     description:"",
                     items:
                         [
@@ -133,7 +133,7 @@ const state = {
             info:
                 {
                     imgUrl:"https://s3.bmp.ovh/imgs/2022/03/bfe4171044b63193.webp",
-                    title: "农业地块提取",
+                    title: "navigationbarItem.agriculturalplotextraction",
                     description:"",
                     items:
                         [

@@ -19,7 +19,6 @@ export default {
           languages: new Map([
               ['zn', '中文'],
               ['en', 'English'],
-              ['ja', '日本语'],
           ]),
           isChoose: false,
       };
