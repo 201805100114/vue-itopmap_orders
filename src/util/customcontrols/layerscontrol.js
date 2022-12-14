@@ -46,7 +46,7 @@ export class LayersControl extends Control {
     }
     let content = $('#lyscontent');
     target.style.opacity = 1;
-    content.show(100);
+    content.show(0);
   }
   handleOnMouseLeave(event){
     let target = event.target;
@@ -54,7 +54,7 @@ export class LayersControl extends Control {
       target = event.target.parentNode;
     }
     let content = $('#lyscontent');
-    content.hide(100);
+    content.hide(0);
     target.style.opacity = 0.8;
   }
   handleBmapGemOnMouseOver(event){

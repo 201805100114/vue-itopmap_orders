@@ -26,9 +26,10 @@ const messages = {
             ecovalueproducts: '生态价值产品'
         },
         mapinfoItem: {
-            Informationontheboundariesofgreenspacessuchasparkstreesandmeadowsinthecity: '城市内公园、树木、草地等绿地边界信息',
-            datasourcehighresolutionimageslices:'数据源：高分辨率影像切片',
-            
+            urbangreenspaceextraction: {
+                Informationontheboundariesofgreenspacessuchasparkstreesandmeadowsinthecity: '城市内公园、树木、草地等绿地边界信息',
+                datasourcehighresolutionimageslices:'数据源：高分辨率影像切片',
+            }
         },
         name: '可乐',
     },
@@ -53,8 +54,10 @@ const messages = {
             ecovalueproducts: 'Eco-value products'
         },
         mapinfoItem: {
-            Informationontheboundariesofgreenspacessuchasparkstreesandmeadowsinthecity: 'Information on the boundaries of green spaces such as parks, trees and meadows in the city',
-            datasourcehighresolutionimageslices: 'Data source: High-resolution image slices'
+            urbangreenspaceextraction: {
+                Informationontheboundariesofgreenspacessuchasparkstreesandmeadowsinthecity: 'Information on the boundaries of green spaces such as parks, trees and meadows in the city',
+                datasourcehighresolutionimageslices: 'Data source: High-resolution image slices'
+            }
         },
         name: 'cola',
     },

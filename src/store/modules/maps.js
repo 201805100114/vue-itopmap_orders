@@ -20,11 +20,11 @@ const state = {
                     imgUrl:"https://cdn.jsdelivr.net/gh/Napier7/Picgo/itopmap-order/1-green.jpg",
                     title: "navigationbarItem.urbangreenspaceextraction",
                     //数据描述（对应卡片中标题下的灰色字体）
-                    description:"城市内公园、树木、草地等绿地边界信息",
+                    description:"mapinfoItem.urbangreenspaceextraction.Informationontheboundariesofgreenspacessuchasparkstreesandmeadowsinthecity",
                     //数据信息（与卡片中的List title对应）
                     items:
                         [
-                            {icon: 'mdi-heart', text: "mapinfoItem.datasourcehighresolutionimageslices"},
+                            {icon: 'mdi-heart', text: "mapinfoItem.urbangreenspaceextraction.datasourcehighresolutionimageslices"},
                             {icon: 'mdi-table', text: "分辨率：1.34e-06 d / 0.5 m"},
                             {icon: 'mdi-archive-clock', text: "覆盖范围",detail:[
                                     {text: 'QAI：***'},
